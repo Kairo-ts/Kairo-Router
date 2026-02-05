@@ -16,6 +16,7 @@ export class ConsoleManager {
         "[ConsoleManager] ConsoleManager is already initialized.",
       );
     }
+    console.log("ConsoleManager init:" + properties.id);
     this.properties = properties;
   }
 
