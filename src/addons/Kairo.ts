@@ -62,11 +62,12 @@ export class Kairo {
   public static init(properties: KairoAddonProperties): void {
     const inst = this.getInstance(properties);
     if (inst.initialized) return;
+    console.log("Kairo init:" + properties.id);
 
-    inst.initialized = true;
-    inst.addonInitializer.subscribeClientHooks();
     KairoUtils.init(properties);
     ConsoleManager.init(properties);
+    inst.initialized = true;
+    inst.addonInitializer.subscribeClientHooks();
   }
 
   public getProperties(): KairoAddonProperties {
