@@ -12,6 +12,7 @@ import {
   type KairoResponse,
 } from "../utils/KairoUtils";
 import { KairoAddonProperties } from "../constants/properties";
+import { ConsoleManager } from "../utils/ConsoleManager";
 
 type ActivateHandler = () => void | Promise<void>;
 type DeactivateHandler = () => void | Promise<void>;
@@ -64,6 +65,8 @@ export class Kairo {
 
     inst.initialized = true;
     inst.addonInitializer.subscribeClientHooks();
+    KairoUtils.init(properties);
+    ConsoleManager.init(properties);
   }
 
   public getProperties(): KairoAddonProperties {
